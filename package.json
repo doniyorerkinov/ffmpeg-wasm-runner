@@ -1,0 +1,54 @@
+{
+  "name": "ffmpeg-wasm-runner",
+  "version": "0.1.0",
+  "description": "Single-threaded ffmpeg.wasm without COOP/COEP: a self-hosted gzipped core that fits Cloudflare's 25 MiB limit, crash recovery, safe file names, and the argument recipes behind toolkave.com's audio and video tools.",
+  "type": "module",
+  "main": "./src/index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./args": "./src/args.js",
+    "./probe": "./src/probe.js"
+  },
+  "files": [
+    "src",
+    "scripts",
+    "index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "bin": {
+    "ffmpeg-wasm-pack-core": "./scripts/pack-core.mjs"
+  },
+  "scripts": {
+    "test": "node --test test/args.test.mjs test/probe.test.mjs test/runner.test.mjs",
+    "test:core": "node --test test/core.test.mjs"
+  },
+  "keywords": [
+    "ffmpeg",
+    "ffmpeg.wasm",
+    "wasm",
+    "video",
+    "audio",
+    "browser",
+    "cloudflare",
+    "single-thread",
+    "coop",
+    "coep"
+  ],
+  "homepage": "https://toolkave.com/video/trim-video",
+  "license": "MIT",
+  "peerDependencies": {
+    "@ffmpeg/ffmpeg": "^0.12.15",
+    "@ffmpeg/util": "^0.12.2"
+  },
+  "devDependencies": {
+    "@ffmpeg/core": "0.12.10"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
