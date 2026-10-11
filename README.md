@@ -27,8 +27,10 @@ Every item here broke something on the live site before the code looked like thi
 
 ## Install
 
+It is not on the npm registry yet, so install it straight from this repository. It lands under the same name, so the imports below work unchanged.
+
 ```sh
-npm i ffmpeg-wasm-runner @ffmpeg/ffmpeg @ffmpeg/util @ffmpeg/core
+npm i github:doniyorerkinov/ffmpeg-wasm-runner @ffmpeg/ffmpeg @ffmpeg/util @ffmpeg/core
 npx ffmpeg-wasm-pack-core public/ffmpeg     # writes ffmpeg-core.js and ffmpeg-core.wasm.gz
 ```
 
